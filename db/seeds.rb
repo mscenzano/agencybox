@@ -18,6 +18,6 @@ belen = User.create(name: 'Belén Linacero', email: 'b.linacero@agencyx.com', pa
 felipa = User.create(name: 'Felipa Schwarz', email: 'f.schwarz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
 
 
-# vodafone = Client.create(name: 'Vodafone', contact_name: 'Paloma Rojo', mail: 'paloma.rojo@vodafone.com', phone: 645253456)
-# endesa = Client.create(name: 'Endesa', contact_name: 'Marta Gasset', mail: 'marta.gasset@endesa.com', phone: 643452456)
-# seagrams = Client.create(name: 'Seagrams', contact_name: 'Luis Palomo', mail: 'luis.palomo@seagrams.com', phone: 606453434)
+vodafone = Client.create(name: 'Vodafone', contact_name: 'Paloma Rojo', email: 'paloma.rojo@vodafone.com', phone: 645253456)
+endesa = Client.create(name: 'Endesa', contact_name: 'Marta Gasset', email: 'marta.gasset@endesa.com', phone: 643452456)
+seagrams = Client.create(name: 'Seagrams', contact_name: 'Luis Palomo', email: 'luis.palomo@seagrams.com', phone: 606453434)
