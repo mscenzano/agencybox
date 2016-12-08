@@ -22,7 +22,6 @@ class ClientsController < ApplicationController
       else
         redirect_to
       end
-    end
   end
 
   def show
