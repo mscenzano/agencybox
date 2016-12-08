@@ -12,6 +12,7 @@ class ClientsController < ApplicationController
 
   def new
     @client = Client.new
+    render 'new'
   end
   
   def create
@@ -19,7 +20,7 @@ class ClientsController < ApplicationController
       unless @client
     render "error"
       else
-        render 'Your client was succesfully created'
+        redirect_to
       end
     end
   end
@@ -31,6 +32,7 @@ class ClientsController < ApplicationController
   
   def edit
     @client = Client.find(params[:id])
+    render 'edit'
   end
 
   def update
@@ -48,8 +50,6 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
     @client.destroy
   end
-
-
 
   private
 
