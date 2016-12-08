@@ -30,22 +30,6 @@ class ClientsController < ApplicationController
     render 'show'
   end
   
-  def edit
-    @client = Client.find(params[:id])
-    render 'edit'
-  end
-
-  def update
-      @client = Client.find(params[:id])
-      respond_to do |format|
-        if @client.update(client_params)
-          format.html { redirect_to @client, notice: 'Task was successfully updated.' }
-        else
-          format.html { render :edit }
-        end
-      end
-  end
-
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
