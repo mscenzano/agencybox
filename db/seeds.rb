@@ -21,3 +21,8 @@ felipa = User.create(name: 'Felipa Schwarz', email: 'f.schwarz@agencyx.com', pas
 vodafone = Client.create(name: 'Vodafone', contact_name: 'Paloma Rojo', email: 'paloma.rojo@vodafone.com', phone: 645253456)
 endesa = Client.create(name: 'Endesa', contact_name: 'Marta Gasset', email: 'marta.gasset@endesa.com', phone: 643452456)
 seagrams = Client.create(name: 'Seagrams', contact_name: 'Luis Palomo', email: 'luis.palomo@seagrams.com', phone: 606453434)
+
+
+halloween = vodafone.projects.create(name: 'Halloween', description: 'Halloween campaign in 150 retail shops Vodafone')
+black_friday = seagrams.projects.create(name: 'Black Friday', description: 'Black friday street marketing campaign')
+christmas = endesa.projects.create(name: 'Christmas campaign', description: 'Full BTL Christmas Campaign')
