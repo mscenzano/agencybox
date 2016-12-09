@@ -1,4 +1,42 @@
-<h1>LANDING</h1>
-
-
-<%= link_to 'Sign_in', new_user_session_path, class: "botonlogin" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AGENCYBOX</title>
+</head>
+<body class="backimage">
+<div class="container-fluid bg-1 text-center paddinghome">
+	<h1 class="intro-heading welcome"> RELAX</h1>
+	<h1 class="intro-heading whitecolortext"> AGENCYBOX IS HERE TO SAVE YOU</h1>
+	<br>
+	<%= button_to 'Lets start!', '#', method: :get, id: "botonmodal", class: "botongo", data: {toggle: "modal", target: "#myModal"} %>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Please sign in</h4>
+      </div>
+      <div class="modal-body">
+       	<%= form_for(:user, url: session_path(:user)) do |f| %>
+		  <div class="form-group">
+		    <%= f.email_field :email, autofocus: true, placeholder: 'E-mail', class: 'form-control' %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control' %>
+		  </div>
+		  <%= f.submit "Log in", class: 'btn btn-success btn-block' %>
+		<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+	
+</body>
+</html>
+<script>
+	document.getElementById("botonmodal").addEventListener("click", function(event){
+	    event.preventDefault()
+	});
+</script>

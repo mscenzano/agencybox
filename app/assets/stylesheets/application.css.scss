@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.welcome {
+font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size:140px;
+font-weight: 500;
+color:white;
+margin-bottom: 0px;
+}
+
+.intro-heading {
+	margin-top: 0px;
+}
+.whitecolortext {
+color:white;
+font-size:50px;
+font-weight: 700;
+}
+
+.backimage {
+background-image: url("homedark.jpeg");
+height: 80vh;
+width: auto;
+background-size: cover;
+
+}
+
+.paddinghome {
+	margin-top: 10%;
+}
+
+.botongo {
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: Arial;
+  color: #858585;
+  font-size: 27px;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #7a7a7a 2px;
+  text-decoration: none;
+}
+
+.botongo:hover {
+  background: #ebebeb;
+  text-decoration: none;
+}

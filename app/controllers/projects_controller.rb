@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
 
-  before_filter :find_client, except: :index
-  before_filter :client_project_find, only: :show, :destroy
+  before_action :find_client, except: :index
+  before_action :client_project_find, only: [:show, :destroy]
+
 
   def index
     @projects = Project.order("created_at DESC")
@@ -15,9 +16,8 @@ class ProjectsController < ApplicationController
     @project = @client.projects.create(project_params)
     unless @project
       render 'error'
-    else 
-      redirect_to 'show'
     end
+      redirect_to 'show'
   end
 
   def show
@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
   private
 
   def find_client
-    @client = Client.find_by(:id params[:client_id])
+    @client = Client.find_by(id: params[:client_id])
   end
 
   def project_params

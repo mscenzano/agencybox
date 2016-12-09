@@ -9,6 +9,8 @@ class UserController < ApplicationController
     @user = User.new
   end
 
+  
+
 #   def create
 #     @user = User.create(user_params)
 #     unless @user
@@ -22,10 +24,10 @@ class UserController < ApplicationController
 #     @user = User.find(params[:id])
 #   end
 
-#   def destroy
-#     @user = User.find(params[:id])
-#     @user.destroy
-#   end
+  # def destroy
+  #   @user = User.find(params[:id])
+  #   @user.destroy
+  # end
 
 #   private
 
