@@ -1,0 +1,18 @@
+<h1>Projects</h1>
+	
+<table class="table table-bordered" style="border: 1px solid black">
+	<tr>
+		<th>Project</th>
+		<th>Description</th>
+	</tr>
+	<% @projects.each do |project| %>
+		<tr> 
+			<td>
+				<h3><%= project.name %></h3>				
+			</td>
+			<td>
+				<p><%= project.description %></p>				
+			</td>
+		</tr>
+	<% end %>
+</table>

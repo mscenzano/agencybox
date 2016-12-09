@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-mariano = User.create(name: 'Mariano Sáenz de Cenzano', email: 'msc@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'ceo')
-daniel = User.create(name: 'Daniel Nacenta', email: 'd.nacenta@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
-jonathan = User.create(name: 'Jonathan Verón', email: 'j.veron@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
-herve = User.create(name: 'Hervé Herbrich', email: 'h.herbrich@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
-sergi = User.create(name: 'Sergi Fraiz', email: 's.fraiz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
-carlos = User.create(name: 'Carlos Jimeno', email: 'c.jimeno@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
-simon = User.create(name: 'Simon Acosta', email: 's.acosta@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
-belen = User.create(name: 'Belén Linacero', email: 'b.linacero@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
-felipa = User.create(name: 'Felipa Schwarz', email: 'f.schwarz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
+User.create(name: 'Mariano Sáenz de Cenzano', email: 'msc@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'ceo')
+User.create(name: 'Daniel Nacenta', email: 'd.nacenta@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
+User.create(name: 'Jonathan Verón', email: 'j.veron@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
+User.create(name: 'Hervé Herbrich', email: 'h.herbrich@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
+User.create(name: 'Sergi Fraiz', email: 's.fraiz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
+User.create(name: 'Carlos Jimeno', email: 'c.jimeno@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
+User.create(name: 'Simon Acosta', email: 's.acosta@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
+User.create(name: 'Belén Linacero', email: 'b.linacero@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
+User.create(name: 'Felipa Schwarz', email: 'f.schwarz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
 
 
 vodafone = Client.create(name: 'Vodafone', contact_name: 'Paloma Rojo', email: 'paloma.rojo@vodafone.com', phone: 645253456)
@@ -23,6 +23,6 @@ endesa = Client.create(name: 'Endesa', contact_name: 'Marta Gasset', email: 'mar
 seagrams = Client.create(name: 'Seagrams', contact_name: 'Luis Palomo', email: 'luis.palomo@seagrams.com', phone: 606453434)
 
 
-halloween = vodafone.projects.create(name: 'Halloween', description: 'Halloween campaign in 150 retail shops Vodafone')
-black_friday = seagrams.projects.create(name: 'Black Friday', description: 'Black friday street marketing campaign')
-christmas = endesa.projects.create(name: 'Christmas campaign', description: 'Full BTL Christmas Campaign')
+vodafone.projects.create(name: 'Halloween', description: 'Halloween campaign in 150 retail shops Vodafone')
+seagrams.projects.create(name: 'Black Friday', description: 'Black friday street marketing campaign')
+endesa.projects.create(name: 'Christmas campaign', description: 'Full BTL Christmas Campaign')
