@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 
 
   def index
-    @projects = Project.order("created_at DESC")
+    @projects = Project.all
   end
 
   def new

@@ -18,6 +18,18 @@ User.create(name: 'Belén Linacero', email: 'b.linacero@agencyx.com', password: 
 User.create(name: 'Felipa Schwarz', email: 'f.schwarz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
 
 
+
+
+30.times do 
+    company = FFaker::Company.name
+    contact_name = FFaker::Name.html_safe_name
+    c = Client.create(name: company, contact_name: contact_name, email: "#{contact_name.parameterize('-')}@#{company.parameterize('.')}.com", phone: rand(600000000..699999999))
+    num_projects = rand(1..4)
+    num_projects.times do 
+      c.projects.create(name: FFaker::Book.title , description: FFaker::DizzleIpsum.phrase)
+    end
+end
+
 vodafone = Client.create(name: 'Vodafone', contact_name: 'Paloma Rojo', email: 'paloma.rojo@vodafone.com', phone: 645253456)
 endesa = Client.create(name: 'Endesa', contact_name: 'Marta Gasset', email: 'marta.gasset@endesa.com', phone: 643452456)
 seagrams = Client.create(name: 'Seagrams', contact_name: 'Luis Palomo', email: 'luis.palomo@seagrams.com', phone: 606453434)
@@ -25,4 +37,6 @@ seagrams = Client.create(name: 'Seagrams', contact_name: 'Luis Palomo', email: '
 
 vodafone.projects.create(name: 'Halloween', description: 'Halloween campaign in 150 retail shops Vodafone')
 seagrams.projects.create(name: 'Black Friday', description: 'Black friday street marketing campaign')
-endesa.projects.create(name: 'Christmas campaign', description: 'Full BTL Christmas Campaign')
+endesa.projects.create(name: 'Christmas campaign', description: 'Full BTL Christmas Campaign, we organized a full street marketing campaign')
+
+
