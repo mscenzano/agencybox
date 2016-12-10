@@ -9,38 +9,9 @@
 
   <body>
     <% if user_signed_in? %>
-       <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <%= link_to "AGENCYBOX", projects_path, class: "navbar-brand" %>
-          </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Projects</a></li>
-            <li><a href="#">Clients</a></li>
-            <li><a href="#">Files</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Options
-              <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Upload Files</a></li>
-                  <li><a href="#">New Project</a></li>
-                  <li><a href="#">New Client</a></li>
-                </ul>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: 'DELETE' do %>
-                <span class="glyphicon glyphicon-log-in"></span> Sign out
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <%= render 'layouts/navbar' %>
     <% end %>
-
     <%= yield %>
-
   </body>
 </html>
 

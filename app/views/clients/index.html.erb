@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table table-bordered" style="border: 1px solid black">
+			<tr>
+				<th>Name</th>
+				<th>Contact</th>
+				<th>Email</th>
+				<th>Phone</th>
+			</tr>
+			<% @clients.each do |client| %>
+				<tr> 
+					<td><h4><%= client.name %></h4></td>
+					<td><p><%= client.contact_name %></p></td>
+					<td><p><%= client.email %></p></td>
+					<td><p><%= client.phone %></p></td>
+
+					<td><%= link_to "Client details", client_path(client.id), class: 'btn btn-danger btn-sm' %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>		
+</div>

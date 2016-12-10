@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table table-bordered" style="border: 1px solid black">
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Type</th>
+			</tr>
+			<% @assets.each do |asset| %>
+				<tr> 
+					<td><h4><%= asset.name %></h4></td>
+					<td><p><%= asset.description %></p></td>
+					<td><p><%= asset.type %></p></td>
+
+					<td><%= link_to "File details", asset_path(asset.id), class: 'btn btn-danger btn-sm' %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>		
+</div>
+
+<h1>Poner boton de ir al proyecto de x archivo en los file details. Ahi estará el boton de uploadeo</h1>
