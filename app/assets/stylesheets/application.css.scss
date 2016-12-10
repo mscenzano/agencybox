@@ -22,6 +22,8 @@ font-size:140px;
 font-weight: 500;
 color:white;
 margin-bottom: 0px;
+margin-top: 50px;
+
 }
 
 .intro-heading {
@@ -29,12 +31,12 @@ margin-bottom: 0px;
 }
 .whitecolortext {
 color:white;
-font-size:50px;
+font-size:80px;
 font-weight: 700;
 }
 
 .backimage {
-background-image: url("homedark.jpeg");
+background-image: url("homeblackedout.jpeg");
 height: 80vh;
 width: auto;
 background-size: cover;
@@ -46,19 +48,23 @@ background-size: cover;
 }
 
 .botongo {
-  -webkit-border-radius: 12;
-  -moz-border-radius: 12;
-  border-radius: 12px;
+  -webkit-border-radius: 36;
+  -moz-border-radius: 36;
+  border-radius: 36px;
   font-family: Arial;
-  color: #858585;
-  font-size: 27px;
+  color: #9c949c;
+  font-size: 16px;
   background: #ffffff;
-  padding: 10px 20px 10px 20px;
-  border: solid #7a7a7a 2px;
+  padding: 6px 20px 6px 20px;
+  border: solid #e6e6e6 2px;
   text-decoration: none;
+  margin-top: 10px;
+  margin-left: 12px;
 }
 
-.botongo:hover {
-  background: #ebebeb;
-  text-decoration: none;
+.buttonchoice {
+  font-size: 25px;
+  margin-top: 100px;
 }
+
+

@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
   end
 
   def client_project_find
-    @project = @client.projects.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
 
