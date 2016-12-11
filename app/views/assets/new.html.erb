@@ -1,13 +1,28 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-5 col-md-offset-1">
-			<%= image_tag 'http://lorempixel.com/700/500/business/', class: 'img-responsive' %>
-		</div>
-		<div class="col-md-5">
-			<h3>Project <%= @project.name %></h3>
-			<h4>Description <%= @project.description %> <%= @project.description %> <%= @project.description %></h4>
+		<div class="col-md-8 col-md-offset-2">
+			<h3>Client: <%= @client.name %></h3>
+			<h5>Contact: <%= @client.contact_name %></h5>
+			<h5>Email: <%= @client.email %></h5>
+			<h5>Phone: <%= @client.phone %></h5>
+			<h3>Project: <%= @project.name %></h3>
+			<h5>Description: <%= @project.description %></h5>
+			<% if @assets.any? %>
+				<h5>Current Files: </h5>
+				<% @assets.each do |asset|%>
+					<div class="col-md-4">
+						<%= image_tag asset.image.url(:medium), class: 'img-responsive' %>
+					</div>
+				<% end %>
+			<% end %>
 			<button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#myModal">Add File</button>
 		</div>
+
+	
+		</div>
+
+	</div>
+
 
 	
 	</div>
@@ -39,10 +54,7 @@
 	      <% end %>	      
 	      </div>
 	    </div>
-
-	  </div>
-	</div>
-
-	<h1>tabla aqui</h1>
-
 </div>
+
+
+

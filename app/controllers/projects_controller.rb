@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @asset = @project.assets.new
   end
 
   def destroy

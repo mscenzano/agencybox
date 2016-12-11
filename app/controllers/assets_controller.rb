@@ -9,14 +9,18 @@ class AssetsController < ApplicationController
 
   def new
     @asset = @project.assets.new
+    @client = @project.client
+    @assets = @project.assets
   end 
 
   def create
-    @asset = @project.assets.create(asset_params)
+    @asset = @project.assets.new(asset_params)
+    @asset.user = current_user
+    @asset.save
     unless @asset
       render 'error'
     end
-      redirect_to 'show'
+      redirect_to project_asset_path(@project,@asset)
   end
 
   def show
@@ -29,11 +33,11 @@ class AssetsController < ApplicationController
   private
 
   def find_project
-    @project = Project.find(params[:id])
+    @project = Project.find(params[:project_id])
   end
 
   def asset_params
-    params.require(:asset).permit(:name, :description, :type)
+    params.require(:asset).permit(:image, :name, :file_type, :description)
   end
 
   def project_assets

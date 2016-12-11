@@ -1,0 +1,15 @@
+<div class="row">
+	
+	<div class="col-md-6 offset-3">
+		
+		<h1>This is the file you just uploaded</h1>
+
+		<%= image_tag @asset.image.url(:medium) %>
+
+
+		<%= @asset.name %>
+		<%=	@asset.description %>
+		<%=	@asset.file_type %>
+	</div>
+
+</div>
