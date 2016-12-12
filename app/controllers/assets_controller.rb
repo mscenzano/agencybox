@@ -37,7 +37,7 @@ class AssetsController < ApplicationController
   end
 
   def asset_params
-    params.require(:asset).permit(:image, :name, :file_type, :description)
+    params.require(:asset).permit(:image, :name, :file_type, :description, :pdf)
   end
 
   def project_assets
