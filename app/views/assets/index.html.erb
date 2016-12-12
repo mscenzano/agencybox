@@ -1,4 +1,3 @@
-
 <div class="container">
 	<div class="col-md-12">
 		<div class="panel panel-default">
@@ -6,7 +5,7 @@
 				<strong>Hi, <%= current_user.name.titleize %>. These are all our Files:</strong>
 			</div>
 			<div class="panel-body" style="padding-top:0px !important">
-				<table class="table table-striped table-bordered table-hover" id="datatable-projects">
+				<table class="table table-striped table-bordered table-hover" id="datatable-assets">
 					<thead>
 						<tr>
 							<th>Client Name</th>
@@ -14,6 +13,7 @@
 							<th>File name</th>
 							<th>Description</th>
 							<th>Type</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -24,6 +24,7 @@
 								<td><p><%= asset.name %></p></td>
 								<td><p><%= asset.description[0..128] + '...' %></p></td>
 								<td><p><%= asset.file_type %></p></td>
+								<td><%= link_to "File details", asset_path(asset.id), class: 'btn btn-default btn-sm' %></td>
 								
 										
 									</div>

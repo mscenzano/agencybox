@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<strong>Hi, <%= current_user.name.titleize %>. These are all our clients:</strong>
@@ -18,8 +18,8 @@
 					<tbody>
 						<% @clients.each do |client| %>
 							<tr> 
-								<td><p><%= client.name %></p></td>
-								<td><h4><%= client.contact_name %></h4></td>
+								<td><h5><%= client.name %></h5></td>
+								<td><p><%= client.contact_name %></p></td>
 								<td><p><%= client.email %></p></td>
 								<td><p><%= client.phone %></p></td>
 								<td><%= link_to "Client´s details", client_path(client.id), class: 'btn btn-default btn-sm' %></td>
