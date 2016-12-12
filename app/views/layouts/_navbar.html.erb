@@ -6,7 +6,11 @@
     <ul class="nav navbar-nav">
       <li><%= link_to "Projects", projects_path %></li> 
       <li><%= link_to "Clients", clients_path %></li> 
-      <li><%= link_to "Files", assets_path %></li> 
+      <li><%= link_to "Files", assets_path %></li>
+      <% if current_user.admin == true %>
+      <li><%= link_to "Admin Panel",  rails_admin_path  %></li> 
+      <% end %>
+ 
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">

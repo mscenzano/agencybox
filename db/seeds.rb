@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(name: 'Mariano Sáenz de Cenzano', email: 'msc@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'ceo')
-User.create(name: 'Daniel Nacenta', email: 'd.nacenta@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
-User.create(name: 'Jonathan Verón', email: 'j.veron@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
-User.create(name: 'Hervé Herbrich', email: 'h.herbrich@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
-User.create(name: 'Sergi Fraiz', email: 's.fraiz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
-User.create(name: 'Carlos Jimeno', email: 'c.jimeno@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
-User.create(name: 'Simon Acosta', email: 's.acosta@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
-User.create(name: 'Belén Linacero', email: 'b.linacero@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'account')
-User.create(name: 'Felipa Schwarz', email: 'f.schwarz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', role: 'creative')
+User.create(name: 'Mariano Sáenz de Cenzano', email: 'msc@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', admin: true)
+User.create(name: 'Daniel Nacenta', email: 'd.nacenta@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', admin: false)
+User.create(name: 'Jonathan Verón', email: 'j.veron@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', admin: false)
+User.create(name: 'Hervé Herbrich', email: 'h.herbrich@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', admin: false)
+User.create(name: 'Sergi Fraiz', email: 's.fraiz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', admin: false)
+User.create(name: 'Carlos Jimeno', email: 'c.jimeno@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', admin: false)
+User.create(name: 'Simon Acosta', email: 's.acosta@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', admin: false)
+User.create(name: 'Belén Linacero', email: 'b.linacero@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', admin: false)
+User.create(name: 'Felipa Schwarz', email: 'f.schwarz@agencyx.com', password: 'agencybox', password_confirmation: 'agencybox', admin: false)
 
 
 
