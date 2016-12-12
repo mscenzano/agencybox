@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Agencybox</title>
     <%= csrf_meta_tags %>
@@ -7,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body bgcolor="#F2F2F2">
     <% if user_signed_in? %>
       <%= render 'layouts/navbar' %>
     <% end %>

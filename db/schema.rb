@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212102429) do
+ActiveRecord::Schema.define(version: 20161212132248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20161212102429) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "file_type"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
     t.index ["project_id"], name: "index_assets_on_project_id", using: :btree
     t.index ["user_id"], name: "index_assets_on_user_id", using: :btree
   end

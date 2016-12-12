@@ -18,7 +18,7 @@
 						<% @projects.each do |project| %>
 							<tr> 
 								<td><p><%= project.client.name %></p></td>
-								<td><h4><%= project.name %></h4></td>
+								<td><p><%= project.name %></p></td>
 								<td><p><%= project.description[0..128] + '...' %></p></td>
 								<td>
 									<div class="btn-group">
@@ -40,7 +40,6 @@
 		</div>
 	</div>		
 </div>
-
 <script>
   (function($) {
       $('#datatable-projects').DataTable({
@@ -51,7 +50,7 @@
            "sSearch": "<span>Search:</span> _INPUT_", //search
            "sLengthMenu": "<span>Show _MENU_ projects</span>", //label
            "oPaginate": { "sFirst": "First", "sLast": "Last", "sNext": ">", "sPrevious": "<" }, //pagination
-           "sInfo": "Displaying _START_ of _END_ upto _TOTAL_ projects"
+           "sInfo": "Displaying _START_ of _END_ upto _TOTAL_ Projects"
           },
           "iDisplayLength": 6,
           "aLengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],

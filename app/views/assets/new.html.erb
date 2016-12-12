@@ -27,7 +27,7 @@
 	
 	</div>
 
-	<div id="myModal" class="modal fade" role="dialog">
+	<div id="hola" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -43,7 +43,11 @@
 		      	<ul><%=	f.label :file_type %></ul>
 		      	<ul><%= f.text_field :file_type %></ul>	
 		      	<ul><%=	f.label :Upload_Document %></ul>
+		      	<ul><%=	f.label :Image %></ul>
 		      	<ul><%= f.file_field :image %></ul>
+		      	<ul><%=	f.label :PDF %></ul>
+		      	<ul><%= f.file_field :pdf %></ul>
+
 		      </div>
 		      <div class="modal-footer">
 		      	<div class="button-group">

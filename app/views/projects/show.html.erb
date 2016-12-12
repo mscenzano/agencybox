@@ -5,44 +5,39 @@
 		</div>
 		<div class="col-md-5">
 			<h3>Project <%= @project.name %></h3>
-			<h4>Description <%= @project.description %> <%= @project.description %> <%= @project.description %></h4>
-			<button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#myModal">Add File</button>
+			<h4>Description <%= @project.description %>
+			<button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#image">Add Image</button>
+			<button type="pdf" class="btn btn-danger btn-md" data-toggle="modal" data-target="#pdf">Add PDF</button>
 		</div>
 
 	
 	</div>
 
-	<div id="myModal" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Add File to <%= @project.name.titleize %></h4>
-	      </div>
-	      <%= form_for @asset, method: :post, url: project_assets_path(@project), html: {multipart: true} do |f| %>
-		      <div class="modal-body">
-		      	<ul><%=	f.label :name %></ul>
-		      	<ul><%= f.text_field :name, autofocus: true %></ul>
-		      	<ul><%=	f.label :description %></ul>
-		      	<ul><%= f.text_area :description, :size => 450%></ul>
-		      	<ul><%=	f.label :file_type %></ul>
-		      	<ul><%= f.text_field :file_type %></ul>	
-		      	<ul><%=	f.label :Upload_Document %></ul>
-		      	<ul><%= f.file_field :image %></ul>
-		      </div>
-		      <div class="modal-footer">
-		      	<div class="button-group">
-			      	<%= f.submit 'Upload', class: 'btn btn-danger pull-left' %>
-		        	<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>
-		        </div>
-		      </div>
-	      <% end %>	      
-	      </div>
-	    </div>
+	<%= render 'assets/form_new_asset_image'%>
+	<%= render 'assets/form_new_asset_pdf'%>
 
-	  </div>
-	</div>
-
-	<h1>tabla aqui</h1>
+	
+	<% if @assets.present? %>
+	<table class="table table-striped">
+		  <thead>
+		    <tr>
+		      <th>Name</th>
+		      <th>Description</th>
+		      <th>Type</th>
+		    </tr>
+		  </thead>
+		<% @assets.each do |asset| %>
+			<tbody>
+			    <tr>
+			      <td><%= asset.name%> </td>
+			      <td><%= asset.description%> </td>
+			      <td><%= asset.file_type %> </td>
+			     
+			    </tr>
+			<% end %>
+		  </tbody>
+		</table>
+		<% end %>
 
 </div>
+

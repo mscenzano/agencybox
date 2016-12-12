@@ -1,15 +1,27 @@
 <div class="row">
 	
-	<div class="col-md-6 offset-3">
+	<div class="col-md-6 col-md-offset-3">
 		
 		<h1>This is the file you just uploaded</h1>
+		<% if @asset.image.present? %>
 
-		<%= image_tag @asset.image.url(:medium) %>
+			<%= image_tag @asset.image.url(:medium) %>
 
 
-		<%= @asset.name %>
-		<%=	@asset.description %>
-		<%=	@asset.file_type %>
+			<ul><%= @asset.name %></ul>
+			<ul><%=	@asset.description %></ul>
+			<ul><%=	@asset.file_type %></ul>
+
+		<% if @asset.pdf.present? %>
+
+		
+
+
+		<% end %>
+
+		<% end %>
+
+
 	</div>
 
 </div>
