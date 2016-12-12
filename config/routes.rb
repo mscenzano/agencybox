@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
- root 'site#index'
+  
+  root 'site#index'
 
   devise_for :users
   get 'profile', to: 'users#profile'

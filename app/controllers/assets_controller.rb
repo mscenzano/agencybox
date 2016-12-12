@@ -1,6 +1,6 @@
 class AssetsController < ApplicationController
   
-  # before_action :find_project
+  before_action :find_project, except: :index
   before_action :project_assets, only: [:show, :destroy]
 
   def index

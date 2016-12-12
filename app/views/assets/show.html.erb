@@ -1,27 +1,35 @@
+<div class="container">
+	
 <div class="row">
 	
-	<div class="col-md-6 col-md-offset-3">
-		
-		<h1>This is the file you just uploaded</h1>
-		<% if @asset.image.present? %>
+		<div class="col-md-5 col-md-offset-1">
 
+			<h3>Name: <%= @asset.name %></h3>
+			<h3>Description: <%= @asset.description %></h3>
+			<h3>File type: <%= @asset.file_type %></h3>
+			<h3>Posted by: <%= @asset.user.name%></h3>
+			<h3>For the project: <%= @asset.project.name%></h3>
+			<h3>Created at: <%= @asset.created_at.strftime("%I:%M %p %b %d")%></h3>
+
+		</div>
+
+			<div class="col-md-5 col-md-offset-2">
+		
+		<% if @asset.image.present? %>
+		<h3>This is the file you just uploaded</h3>
 			<%= image_tag @asset.image.url(:medium) %>
 
-
-			<ul><%= @asset.name %></ul>
-			<ul><%=	@asset.description %></ul>
-			<ul><%=	@asset.file_type %></ul>
-
 		<% if @asset.pdf.present? %>
-
-		
-
+		<h3> Everything is OK! Thanks for the file </h3> 
 
 		<% end %>
-
 		<% end %>
 
 
 	</div>
 
 </div>
+
+</div>
+
+
