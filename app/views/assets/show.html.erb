@@ -2,7 +2,7 @@
 	
 <div class="row">
 	
-		<div class="col-md-5 col-md-offset-1">
+		<div class="col-md-6 col-md-offset-1">
 
 			<h3>Name: <%= @asset.name %></h3>
 			<h3>Description: <%= @asset.description %></h3>
@@ -11,26 +11,26 @@
 			<h3>For the project: <%= @asset.project.name%></h3>
 			<h3>Created at: <%= @asset.created_at.strftime("%I:%M %p %b %d")%></h3>
 
-		</div>
 
-			<div class="col-md-5 col-md-offset-2">
 		
 		<% if @asset.image.present? %>
-		<h3>This is the file you just uploaded</h3>
 			<%= image_tag @asset.image.url(:medium) %>
 
 		<% if @asset.pdf.present? %>
-		<h3> Everything is OK! Thanks for the file </h3> 
 
 		<% end %>
 		<% end %>
+		<br>
+		<br>
+		<%= link_to "Back to Files", assets_path, class: 'btn btn-primary btn-sm' %>
+		<%= link_to "Delete Asset", project_asset_path(@asset.id), method: :delete, class: 'btn btn-danger btn-sm' %>
+		<%= link_to "Download", project_asset_path(@asset.id), method: :delete, class: 'btn btn-danger btn-sm' %>
+
+		</div>
 
 
 	</div>
 
-</div>
-<td><%= link_to "Back to Files", assets_path, class: 'btn btn-default btn-sm' %></td>
-<td><%= link_to "Delete Asset", project_asset_path(@asset.id), method: :delete, class: 'btn btn-default btn-sm' %></td>
 </div>
 
 

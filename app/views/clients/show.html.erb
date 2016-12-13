@@ -21,7 +21,7 @@
 						<tr> 
 							<td><h4><%= project.name %></h4></td>
 							<td><p><%= project.description[0..128] + '...' %></p></td>
-							<td><%= link_to "Project details", project_path(project.id), class: 'btn btn-default btn-sm' %></td>
+							<td><%= link_to "Project details", project_path(project.id), class: 'btn btn-primary btn-sm' %></td>
 						</tr>
 					<% end %>
 				</tbody>
@@ -30,6 +30,8 @@
 		</div>
 
 	</div>
-	<td><%= link_to "Back to Clients", clients_path, class: 'btn btn-default btn-sm' %></td>
-	<td><%= link_to "Delete Client and Projects", client_path(@client.id), method: :delete, class: 'btn btn-default btn-sm' %></td>
+	<td><%= link_to "Back to Clients", clients_path, class: 'btn btn-primary btn-sm' %></td>
+	<td><%= link_to "Add new Project", new_project_path(@client.id), class: 'btn btn-primary btn-sm' %></td>
+
+	<td><%= link_to "Delete Client and Projects", client_path(@client.id), method: :delete, class: 'btn btn-danger btn-sm' %></td>
 </div>

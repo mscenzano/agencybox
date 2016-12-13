@@ -20,7 +20,7 @@ class AssetsController < ApplicationController
     unless @asset
       render 'error'
     end
-      redirect_to project_asset_path(@project,@asset)
+    redirect_to assets_path
   end
 
   def show

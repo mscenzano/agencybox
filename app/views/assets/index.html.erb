@@ -13,6 +13,7 @@
 							<th>File name</th>
 							<th>Description</th>
 							<th>Type</th>
+							<th>Uploaded by</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -24,7 +25,8 @@
 								<td><p><%= asset.name %></p></td>
 								<td><p><%= asset.description[0..128] + '...' %></p></td>
 								<td><p><%= asset.file_type %></p></td>
-								<td><%= link_to "File details", project_asset_path(asset.project.id, asset.id), class: 'btn btn-default btn-sm' %></td>
+								<td><p><%= asset.user.name %></p></td>
+								<td><%= link_to "File details", project_asset_path(asset.project.id, asset.id), class: 'btn btn-success btn-sm' %></td>
 								
 										
 									</div>
