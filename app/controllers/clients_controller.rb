@@ -13,7 +13,7 @@ class ClientsController < ApplicationController
       unless @client
         render "error"
       else
-        redirect_to
+        redirect_to 'show'
       end
   end
 
@@ -25,6 +25,7 @@ class ClientsController < ApplicationController
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
+    redirect_to projects_path
   end
 
   private

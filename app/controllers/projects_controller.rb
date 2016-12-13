@@ -9,15 +9,16 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = @client.projects.new
+    @project = Project.new
+    @clients = Client.all
   end
 
   def create
-    @project = @client.projects.create(project_params)
+    @project = Project.create(project_params)
     unless @project
       render 'error'
     end
-      redirect_to 'show'
+      redirect_to project_path(@project)
   end
 
   def show
@@ -27,6 +28,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
+    redirect_to projects_path
   end
 
   private
@@ -36,7 +38,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description)
+    params.require(:project).permit(:name, :description, :client_id)
   end
 
   def client_project_find

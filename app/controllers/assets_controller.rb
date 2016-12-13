@@ -27,7 +27,9 @@ class AssetsController < ApplicationController
   end
 
   def destroy
+    @asset = @project.assets.find(params[:id])
     @asset.destroy
+    redirect_to project_assets_path
   end
 
   private

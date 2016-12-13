@@ -30,4 +30,6 @@
 		</div>
 
 	</div>
+	<td><%= link_to "Back to Clients", clients_path, class: 'btn btn-default btn-sm' %></td>
+	<td><%= link_to "Delete Client and Projects", client_path(@client.id), method: :delete, class: 'btn btn-default btn-sm' %></td>
 </div>

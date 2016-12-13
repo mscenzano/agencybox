@@ -24,7 +24,7 @@
 								<td><p><%= asset.name %></p></td>
 								<td><p><%= asset.description[0..128] + '...' %></p></td>
 								<td><p><%= asset.file_type %></p></td>
-								<td><%= link_to "File details", asset_path(asset.id), class: 'btn btn-default btn-sm' %></td>
+								<td><%= link_to "File details", project_asset_path(asset.project.id, asset.id), class: 'btn btn-default btn-sm' %></td>
 								
 										
 									</div>

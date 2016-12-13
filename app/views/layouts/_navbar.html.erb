@@ -7,9 +7,7 @@
       <li><%= link_to "Projects", projects_path %></li> 
       <li><%= link_to "Clients", clients_path %></li> 
       <li><%= link_to "Files", assets_path %></li>
-      <% if current_user.admin %>
       <li><%= link_to "Admin Panel",  rails_admin_path  %></li> 
-      <% end %>
  
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -18,7 +16,10 @@
         <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "New Project", new_project_path %></li>
-            <li><%= link_to "New Client", new_project_path %></li> 
+            <li><%= link_to "New Client", new_client_path %></li> 
+            <% if current_user.admin %>
+              <li><%= link_to "New User", new_user_path %></li> 
+            <% end %>
           </ul>
       </li>
       <li>
