@@ -27,7 +27,6 @@ class AssetsController < ApplicationController
   end
 
   def destroy
-    @asset = @project.assets.find(params[:id])
     @asset.destroy
     redirect_to project_assets_path
   end
@@ -43,7 +42,7 @@ class AssetsController < ApplicationController
   end
 
   def project_assets
-    @asset = @project.assets.find_by(id: params[:id])
+    @asset = Asset.find(params[:id])
   end
 
 end

@@ -1,0 +1,51 @@
+<div id="file" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Add Image to <%= @project.name.titleize %></h4>
+			</div>
+			<%= form_for @asset, method: :post, url: project_assets_path(@project), html: {multipart: true} do |f| %>
+				<div class="modal-body">
+					<ul><%=	f.label :name %></ul>
+					<ul><%= f.text_field :name, autofocus: true %></ul>
+					<ul><%=	f.label :description %></ul>
+					<ul><%= f.text_area :description, :size => 450%></ul>
+					<ul><%=	f.label :file_type %></ul>
+					<ul><%= f.select :file_type, [ 'select', 'image', 'pdf'], class:"type" %></ul>
+					<ul>
+						<%= f.file_field :image, class: "att_img" %>
+						<%= f.file_field :pdf, class: "att_pdf"  %>
+					</ul>	
+				</div>
+				<div class="modal-footer">
+					<div class="button-group">
+						<%= f.submit 'Upload', class: 'btn btn-danger pull-left' %>
+						<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			<% end %>	      
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).on('ready', function(){ 
+	$('.att_img').hide()
+	$('.att_pdf').hide()
+	$("#asset_file_type").change(function() {
+	   var sel = $("#asset_file_type").val();
+	  if (sel === "image") {
+	  		$('.att_img').show()
+	  		$('.att_pdf').hide()
+
+	  	};
+	  if (sel === "pdf") {
+	  			$('.att_pdf').show()
+	  			$('.att_img').hide()
+	  	};
+	  
+	});
+});
+
+</script>

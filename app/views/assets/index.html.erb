@@ -4,7 +4,7 @@
 			<div class="panel-heading">
 				<strong>Hi, <%= current_user.name.titleize %>. These are all our Files:</strong>
 			</div>
-			<div class="panel-body" style="padding-top:0px !important">
+			<div class="panel-body" style="padding-top:0px;padding-bottom:0px;">
 				<table class="table table-striped table-bordered table-hover" id="datatable-assets">
 					<thead>
 						<tr>
@@ -26,7 +26,7 @@
 								<td><p><%= asset.description[0..128] + '...' %></p></td>
 								<td><p><%= asset.file_type %></p></td>
 								<td><p><%= asset.user.name %></p></td>
-								<td><%= link_to "File details", project_asset_path(asset.project.id, asset.id), class: 'btn btn-success btn-sm' %></td>
+								<td><%= link_to "File details", project_asset_path(asset.project.id, asset.id), class: 'btn btn-primary btn-xs' %></td>
 								
 										
 									</div>
@@ -43,7 +43,6 @@
 
 <script>
   (function($) {
-  	  console.log("EEEE");
       $('#datatable-assets').DataTable({
           responsive: true,
           "order": [[ 0, 'desc' ]],

@@ -17,8 +17,9 @@
  */
  
 @import "bootstrap-sprockets";
+@import "bootswatch/Spacelab/variables";
 @import "bootstrap";
-
+@import "bootswatch/Spacelab/bootswatch";
 
 .welcome {
 font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -76,6 +77,11 @@ margin-top: 20px;
 
 }
 
-.navbar_mystyle {
-  background-color:#e3f2fd;
-  }
+// colores links navbar
+.navbar-brand {
+  color: #3399F3 !important;
+}
+.navbar-brand:hover {
+  color: #777 !important;
+}
+

@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body bgcolor="#F2F2F2">
+  <body class="<%= request.params[:controller] %>" bgcolor="#F2F2F2">
     <% if user_signed_in? %>
       <%= render 'layouts/navbar' %>
     <% end %>

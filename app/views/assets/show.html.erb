@@ -1,35 +1,48 @@
 <div class="container">
-	
-<div class="row">
-	
-		<div class="col-md-6 col-md-offset-1">
-
-			<h3>Name: <%= @asset.name %></h3>
-			<h3>Description: <%= @asset.description %></h3>
-			<h3>File type: <%= @asset.file_type %></h3>
-			<h3>Posted by: <%= @asset.user.name%></h3>
-			<h3>For the project: <%= @asset.project.name%></h3>
-			<h3>Created at: <%= @asset.created_at.strftime("%I:%M %p %b %d")%></h3>
-
 
 		
+	<div class="panel panel-default">
+			<div class="panel-body" style="padding-bottom:50px !important">
+<div class="row">
+	
+		<div class="col-md-5 col-md-offset-1">
+			<h2>This is the file, <%= current_user.name.split(" ")[0] %></h2>
+
+			<h4> Name: <%= @asset.name %></h4>
+			<h4> Description: <%= @asset.description %></h4>
+			<h4> Project's file name: <%= @asset.project.name%></h4>
+			<h4> File type: <%= @asset.file_type %></h4>
+			<h4> Posted by: <%= @asset.user.name%></h4>
+			<h4> Created at: <%= @asset.created_at.strftime("%I:%M %p %b %d")%></h4>
+			<%= link_to "Back to Files", assets_path, class: 'btn btn-primary btn-sm' %>
+		<%= link_to "Delete Asset", project_asset_path(@asset.id), method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: "Are you sure you want to delete?"} %>
 		<% if @asset.image.present? %>
-			<%= image_tag @asset.image.url(:medium) %>
 
+	</div>
+		<%= link_to "Download Image", @asset.image.url(:medium), :"download"=>"image", class: 'btn btn-danger btn-sm' %>
+		<% end %>
 		<% if @asset.pdf.present? %>
-
+		<%= link_to "Download PDF", @asset.pdf.url, :"download"=>"pdf", class: 'btn btn-danger btn-sm' %>
 		<% end %>
-		<% end %>
-		<br>
-		<br>
-		<%= link_to "Back to Files", assets_path, class: 'btn btn-primary btn-sm' %>
-		<%= link_to "Delete Asset", project_asset_path(@asset.id), method: :delete, class: 'btn btn-danger btn-sm' %>
-		<%= link_to "Download", project_asset_path(@asset.id), method: :delete, class: 'btn btn-danger btn-sm' %>
 
 		</div>
 
+	<div class="col-md-5">
+	
+		
+		<% if @asset.image.present? %>
+			<%= image_tag @asset.image.url(:medium) %>
+		<% end %>
+
+		<% if @asset.pdf.present? %>
+			<iframe src=<%= @asset.pdf.url %> width="500" height="450" style="border: none;"> </iframe>
+		<% end %>
 
 	</div>
+
+
+	</div>
+	
 
 </div>
 

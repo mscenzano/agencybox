@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @client = Client.first if @client.nil?
     @project = Project.new
     @clients = Client.all
   end

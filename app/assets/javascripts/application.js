@@ -19,3 +19,15 @@
 //= require_tree .
 
 
+$(document).on('ready', function(){ 
+
+	var bodyclass = $('body').attr('class');
+	if (bodyclass == "projects") {
+		$(".projects").addClass("active")
+	} else if (bodyclass == "assets") { 
+		$(".files").addClass("active")
+	} else if (bodyclass == "clients") {
+		$(".clients").addClass("active")
+	}
+
+});

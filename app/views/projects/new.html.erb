@@ -9,7 +9,7 @@
 		  	<%= f.label :description %>:
 		  	<%= f.text_area :description %><br />
 
-		  	<%= f.select :client_id, options_for_select(@clients.map{ |c| [c.name, c.id] }) %>
+		  	<%= f.select :client_id, options_for_select(@clients.map{ |c| [c.name, c.id] }, @client.id) %>
 
   			<%= f.submit %>
 		<% end %>
