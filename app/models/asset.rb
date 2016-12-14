@@ -6,4 +6,5 @@ class Asset < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   has_attached_file :pdf
   validates_attachment_content_type :pdf, content_type: "application/pdf"
+  
 end

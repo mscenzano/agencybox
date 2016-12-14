@@ -1,6 +1,6 @@
 class AssetsController < ApplicationController
   
-  before_action :find_project, except: :index
+  before_action :find_project, except: [:index, :destroy]
   before_action :project_assets, only: [:show, :destroy]
 
   def index
@@ -8,9 +8,8 @@ class AssetsController < ApplicationController
   end
 
   def new
-    @asset = @project.assets.new
+    @assets = @project.assets.order("created_at DESC").limit(4)
     @client = @project.client
-    @assets = @project.assets
   end 
 
   def create

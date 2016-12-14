@@ -40,7 +40,7 @@ font-size:80px;
 font-weight: 700;
 }
 
-.backimage {
+body.site {
 background-image: url("homeblackedout.jpeg");
 height: 80vh;
 width: auto;
@@ -83,5 +83,14 @@ margin-top: 20px;
 }
 .navbar-brand:hover {
   color: #777 !important;
+}
+
+.hidebuttons {
+  display: none !important;
+}
+
+.maxheight {
+  height: 150px;
+  width: auto;
 }
 

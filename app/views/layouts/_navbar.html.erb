@@ -17,7 +17,7 @@
             <li><%= link_to "New Project", new_project_path, method: :get %></li>
             <li><%= link_to "New Client", new_client_path, method: :get %></li> 
             <% if current_user.admin %>
-              <li><%= link_to "New User", new_user_path, method: :get %></li> 
+              <li><%= link_to "Users Management", user_index_path, method: :get %></li> 
             <% end %>
           </ul>
       </li>

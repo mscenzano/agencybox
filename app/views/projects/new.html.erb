@@ -1,17 +1,23 @@
 <div class="row">
-	<div class="col-md-4 offset-4">
+	<div class="col-md-4 col-md-offset-4">
+		<h1 class="text-center">Wow,<%=current_user.name.split(" ")[0]%>!!!  :)</h1>
+		<h3 class="text-center">Lets create a New Project</h3>
 
 		<%= form_for @project do |f| %>
-			
-			<%= f.label :name %>:
-		  	<%= f.text_field :name %><br />
-
-		  	<%= f.label :description %>:
-		  	<%= f.text_area :description %><br />
-
+			<div class="form-group">				
+				<%= f.label :name %>:
+			  	<%= f.text_field :name, class:"form-control"  %>
+			</div>
+			<div class="form-group">
+				<%= f.label :description%>:
+				<%= f.text_area :description, class:"form-control" %>
+			</div>
+			<div class="form-group">
+			<%= f.label :Select_Client%>:
 		  	<%= f.select :client_id, options_for_select(@clients.map{ |c| [c.name, c.id] }, @client.id) %>
+			</div>
 
-  			<%= f.submit %>
+  			<%= f.submit "Create",class: 'btn btn-danger btn-block ' %>
 		<% end %>
 
 

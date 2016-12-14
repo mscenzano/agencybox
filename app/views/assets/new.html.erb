@@ -1,32 +1,39 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-6 col-md-offset-1">
 			<h3>Client: <%= @client.name %></h3>
 			<h5>Contact: <%= @client.contact_name %></h5>
 			<h5>Email: <%= @client.email %></h5>
 			<h5>Phone: <%= @client.phone %></h5>
 			<h3>Project: <%= @project.name %></h3>
 			<h5>Description: <%= @project.description %></h5>
-			<% if @assets.any? %>
-				<h5>Current Files: </h5>
+			<%= link_to 'Back', :back, class: 'btn btn-danger' %>
+			<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#file">Add File</button>	
+			<br><br>
+		</div>
+			
+			
+
+	</div>
+
+	<% if @assets.present? %>
+		<div class="row">
+			<div class="col-md-11 col-md-offset-1"><h3>Current Files: </h3></div>
+			<div class="col-md-1"></div>
 				<% @assets.each do |asset|%>
-					<div class="col-md-4">
-						<%= image_tag asset.image.url(:medium), class: 'img-responsive' %>
+					<div class="col-md-3">
+						<% if asset.image.url.present? %>
+							<%= link_to project_asset_path(@project.id, asset.id) do %>
+								<%= image_tag asset.image.url(:medium), class: 'img-responsive img-rounded maxheight' %>
+							<% end %>
+						<% end %>
 					</div>
 				<% end %>
-			<% end %>
-			<button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#file">Add File</button>
-			
-	
-			
-		</div>
-
-		</div>
-
-	</div>
+			</div>
 
 			<%= render 'form_new_asset_file'%>
-	
-	</div>
+		</div>
+	<% end %>
+</div>
 
 	

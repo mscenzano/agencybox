@@ -13,7 +13,7 @@ class ClientsController < ApplicationController
       unless @client
         render "error"
       else
-        redirect_to 'show'
+        redirect_to client_path(@client)
       end
   end
 
@@ -25,13 +25,13 @@ class ClientsController < ApplicationController
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
-    redirect_to projects_path
+    redirect_to clients_path
   end
 
   private
 
     def client_params
-      params.require(:client).permit(:name, :phone, :mail, :contact_name)
+      params.require(:client).permit(:name, :phone, :email, :contact_name)
     end
   
 end
