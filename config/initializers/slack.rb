@@ -1,0 +1,1 @@
+$poster = Slack::Poster.new("https://hooks.slack.com/services/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")

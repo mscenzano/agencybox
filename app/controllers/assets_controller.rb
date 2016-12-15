@@ -1,5 +1,4 @@
 class AssetsController < ApplicationController
-  
   before_action :find_project, except: [:index, :destroy]
   before_action :project_assets, only: [:show, :destroy]
 
@@ -15,11 +14,13 @@ class AssetsController < ApplicationController
   def create
     @asset = @project.assets.new(asset_params)
     @asset.user = current_user
-    @asset.save
-    unless @asset
+    if @asset.save
+      message = Slack::Message.new("#{current_user.name.split(" ")[0]} just uploaded a new file for the project: #{@project.name}")
+      $poster.send_message(message)
+    else
       render 'error'
     end
-    redirect_to assets_path
+    redirect_to assets_path  
   end
 
   def show

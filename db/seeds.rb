@@ -35,8 +35,8 @@ endesa = Client.create(name: 'Endesa', contact_name: 'Marta Gasset', email: 'mar
 seagrams = Client.create(name: 'Seagrams', contact_name: 'Luis Palomo', email: 'luis.palomo@seagrams.com', phone: 606453434)
 
 
-vodafone.projects.create(name: 'Halloween', description: 'Halloween campaign in 150 retail shops Vodafone')
-seagrams.projects.create(name: 'Black Friday', description: 'Black friday street marketing campaign')
-endesa.projects.create(name: 'Christmas campaign', description: 'Full BTL Christmas Campaign, we organized a full street marketing campaign')
+vodafone.projects.create(name: 'New years Eve Campaign', description: 'Halloween campaign in 150 retail shops Vodafone. We have to create an event that reinforces the brand image in every retail shop. The objective is to guarantee a positive experience for customers.')
+seagrams.projects.create(name: 'Black Friday', description: 'Black friday street marketing campaign. The objective is to bring people to the shop, make the taste the new flavours and mixings, make them feel confortable and spread the brand´s image via experientials.')
+endesa.projects.create(name: 'Christmas campaign', description: 'Full BTL (below the line) Christmas Campaign.  The client wants a full street marketing campaign planning for winter. We have to be present in schools, shopping centers and sport centers. We must make people conscious of the climate change and how the company is working to change the future.')
 
 

@@ -16,8 +16,11 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.create(project_params)
-    unless @project
-      render 'error'
+    if @project
+    message = Slack::Message.new("#{current_user.name.split(" ")[0]} just created a new Project! Dont forget to check it out!" )
+    $poster.send_message(message)
+
+     else render 'error'
     end
       redirect_to project_path(@project)
   end

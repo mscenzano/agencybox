@@ -10,11 +10,13 @@ class ClientsController < ApplicationController
   
   def create
     @client = Client.create(client_params)
-      unless @client
-        render "error"
+      if @client
+      message = Slack::Message.new("#{current_user.name.split(" ")[0]} just created a new client! Go and check it out!" )
+      $poster.send_message(message)
       else
+        render "error"
+       end
         redirect_to client_path(@client)
-      end
   end
 
   def show
