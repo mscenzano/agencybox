@@ -32,7 +32,7 @@
 					<% if @asset.image.present? %>
 						<%= image_tag @asset.image.url(:medium), class: 'img-rounded' %>
 					<% elsif @asset.pdf.present? %>
-						<iframe src=<%= @asset.pdf.url %> width="500" height="450" style="border: none;"> </iframe>
+						<iframe src=<%= @asset.pdf.url %> width="400" height="450" style="border: none;"> </iframe>
 					<% end %>
 
 				</div>
