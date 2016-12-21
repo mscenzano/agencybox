@@ -15,7 +15,7 @@
  *= require dataTables/jquery.dataTables
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  */
- 
+@import "base";
 @import "bootstrap-sprockets";
 @import "bootswatch/Spacelab/variables";
 @import "bootstrap";
